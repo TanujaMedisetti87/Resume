@@ -18,30 +18,7 @@ script:
   
 deploy:
   - provider: codedeploy
-    access_key_id: $SOMEVARA
-    secret_access_key: $SOMEVARB
+    access_key_id: $SOMEVARa
+    secret_access_key: $SOMEVARb
     application: Resume
     deployment_group: ResumeGroup
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
