@@ -22,3 +22,4 @@ deploy:
     secret_access_key: $SOMEVARb
     application: Resume
     deployment_group: ResumeGroup
+    region: us-east-1c
