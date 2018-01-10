@@ -18,8 +18,8 @@ script:
   
 deploy:
   - provider: codedeploy
-    access_key_id: SOMEVAR
-    secret_access_key: SOMEVAR1
+    access_key_id: $SOMEVAR
+    secret_access_key: $SOMEVAR1
     application: Resume
     deployment_group: ResumeGroup
     
