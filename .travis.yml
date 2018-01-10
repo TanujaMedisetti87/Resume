@@ -8,8 +8,7 @@ addons:
   sonarcloud:
     organization: "tanujamedisetti87-github"
     token:
-      secure: " c31adcd738465686855224f7f9b30c8ec5008271"
-      
+      secure: "c31adcd738465686855224f7f9b30c8ec5008271"
   sauce_connect:
     username: "TanujaMedisetti87"
     access_key: "130dda79-1dea-45cd-849c-24cfbe048884"
