@@ -20,6 +20,6 @@ deploy:
   - provider: codedeploy
     access_key_id: $SOMEVARa
     secret_access_key: $SOMEVARb
-    application: Resume
-    deployment_group: ResumeGroup
+    application: ResumeApp
+    deployment_group: ResumeAppFleet
     region: us-east-1c
