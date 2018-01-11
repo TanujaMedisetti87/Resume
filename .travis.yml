@@ -32,7 +32,7 @@ deploy:
   skip_cleanup: true
   repo: TanujaMedisetti87/Resume
   bucket: tanujamedisetti8795
-  region:  us-east-1c
+  region:  us-east-1
   
 script:
   - zip -r latest *
