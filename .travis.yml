@@ -50,7 +50,7 @@ deploy:
     key: mahesh.zip
     bundle_type: zip
     application: TestApplication
-    deployment_group: TestApplication
+    deployment_group: Test1
     region: us-east-1
     on:
       repo: TanujaMedisetti87/Resume
