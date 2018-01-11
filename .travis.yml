@@ -30,7 +30,8 @@ deploy:
   secret_access_key: $SOMEVARb
   local_dir: dpl_cd_upload
   skip_cleanup: true
-  repo: TanujaMedisetti87/Resume
+  on: &2
+    repo: TanujaMedisetti87/Resume
   bucket: tanujamedisetti8795
   region:  us-east-1
   
