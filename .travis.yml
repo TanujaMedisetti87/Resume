@@ -32,7 +32,7 @@ deploy:
   skip_cleanup: true
   repo: TanujaMedisetti87/Resume
   bucket: tanujamedisetti
-  region:  US East (N. Virginia)  
+  region:  us-east-1
   
 - provider: codedeploy
   access_key_id: $SOMEVARa
@@ -42,7 +42,7 @@ deploy:
   bundle_type: zip
   application: ResumeApplication
   deployment_group: ResumeFleet
-  region:  US East (N. Virginia)
+  region:  us-east-1
   on: *2
 
 script:
