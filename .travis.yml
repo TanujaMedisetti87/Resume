@@ -33,6 +33,4 @@ deploy:
   on: &2
     repo: TanujaMedisetti87/Resume
   bucket: tanujamedisetti
-  region: us-east-1c
-
-    
+  region: us-east-1c  
