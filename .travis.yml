@@ -24,8 +24,8 @@ addons:
 script:
   - sonar-scanner
     
- deploy:
-- provider: s3
+deploy:
+  - provider: s3
   access_key_id: $SOMEVARa
   secret_access_key: $SOMEVARb
   local_dir: dpl_cd_upload
