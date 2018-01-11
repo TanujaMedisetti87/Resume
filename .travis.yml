@@ -34,17 +34,6 @@ deploy:
   bucket: tanujamedisetti8795
   region:  us-east-1
   
-- provider: codedeploy
-  access_key_id: $SOMEVARa
-  secret_access_key: $SOMEVARb
-  bucket: tanujamedisetti8795
-  key: latest.zip
-  bundle_type: zip
-  application: ResumeApplication
-  deployment_group: ResumeFleet
-  region:  us-east-1
-  on: *2
-
 script:
   - zip -r latest *
   - mkdir -p dpl_cd_upload
