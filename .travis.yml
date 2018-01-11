@@ -31,13 +31,13 @@ deploy:
   local_dir: dpl_cd_upload
   skip_cleanup: true
   repo: TanujaMedisetti87/Resume
-  bucket: tanujamedisetti
+  bucket: tanujamedisetti8795
   region:  us-east-1
   
 - provider: codedeploy
   access_key_id: $SOMEVARa
   secret_access_key: $SOMEVARb
-  bucket: tanujamedisetti
+  bucket: tanujamedisetti8795
   key: latest.zip
   bundle_type: zip
   application: ResumeApplication
