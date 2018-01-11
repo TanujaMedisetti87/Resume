@@ -24,29 +24,36 @@ addons:
 script:
   - sonar-scanner
   
+before_deploy:
+  - cd ..
+  - zip -r mahesh *
+  - mkdir -p "dpl_cd_upload"
+  - mv mahesh.zip dpl_cd_upload/mahesh.zip
+
 deploy:
-- provider: s3
-  access_key_id: $SOMEVARa
-  secret_access_key: $SOMEVARb
-  local_dir: dpl_cd_upload
-  skip_cleanup: true
-  on: &2
-    repo: TanujaMedisetti87/Resume
-  bucket: tanujamedisetti8795
-  region:  us-east-1
-  
-- provider: codedeploy
-  access_key_id: $SOMEVARa
-  secret_access_key: $SOMEVARb
-  bucket: tanujamedisetti8795
-  key: latest.zip
-  bundle_type: zip
-  application: ResumeApplication
-  deployment_group: ResumeFleet
-  region: us-east-1c
-  on: *2
-  
-script:
-  - zip -r latest *
-  - mkdir -p dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    local_dir: dpl_cd_upload
+    bucket: tanuja123
+    region: us-east-1
+    skip_cleanup: true
+    acl: public_read
+    detect_encoding: true
+    on:
+      repo:  TanujaMedisetti87/Resume
+      all_branches: true
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: tanuja123
+    key: mahesh.zip
+    bundle_type: zip
+    application: TestApplication
+    deployment_group: TestApplication
+    region: us-east-1
+    on:
+      repo: TanujaMedisetti87/Resume
+      all_branches: true
+after_deploy:
+  - echo "Performing after deploy procedures..."
