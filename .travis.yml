@@ -4,6 +4,14 @@ sudo: required
 language: node_js
 node_js:
   - "stable"
+  
+services:
+  - mongodb
+  
+cache: 
+  directories:
+    - node_modules
+
 addons:
   sonarcloud:
     organization: "tanujamedisetti87-github"
@@ -15,11 +23,14 @@ addons:
     
 script:
   - sonar-scanner
-  
-deploy:
-  - provider: codedeploy
-    access_key_id: $SOMEVARa
-    secret_access_key: $SOMEVARb
-    application: ResumeApp
-    deployment_group: ResumeAppFleet
-    region: us-east-1c
+    
+ deploy:
+- provider: s3
+  access_key_id: $SOMEVARa
+  secret_access_key: $SOMEVARb
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: TanujaMedisetti87/Resume
+  bucket: tanujamedisetti
+  region: us-east-1c
