@@ -61,6 +61,3 @@ after_deploy:
   - unzip dpl_cd_upload/mahesh1.zip -d mahesh1
   
   
-  
-  
-  
