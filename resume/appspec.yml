@@ -1,16 +1,16 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /resume/views/index.html
     destination: /home/ec2-user
     
 hooks:
-BeforeInstall:
-    - location: scripts/npm-install.sh
+  BeforeInstall:
+    - location: npm-install.sh
       runas: root
       timeout: 300
   AfterInstall:
-    - location: scripts/npm-start.sh
+    - location: npm-start.sh
       runas: root
       timeout: 300
  # ApplicationStart:
