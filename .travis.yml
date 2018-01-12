@@ -26,16 +26,16 @@ script:
   
 before_deploy:
   - cd ..
-  - zip -r mahesh *
+  - zip -r resumeapp *
   - mkdir -p "dpl_cd_upload"
-  - mv mahesh.zip dpl_cd_upload/mahesh.zip
+  - mv resumeapp.zip dpl_cd_upload/resumeapp.zip
 
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
     local_dir: dpl_cd_upload
-    bucket: bucket1
+    bucket: bucketresume
     region: us-east-1
     skip_cleanup: true
     acl: public_read
@@ -46,8 +46,8 @@ deploy:
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
-    bucket: bucket1
-    key: mahesh.zip
+    bucket: bucketresume
+    key: resumeapp.zip
     bundle_type: zip
     application: AWSResume
     deployment_group: AWSResume
@@ -57,7 +57,7 @@ deploy:
       all_branches: true
 after_deploy:
   - echo "Performing after deploy procedures..."
-  - unzip mahesh.zip
+  - unzip resumeapp.zip
   
   
    
