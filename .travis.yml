@@ -35,7 +35,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
     local_dir: dpl_cd_upload
-    bucket: tanuja123
+    bucket: bucket1
     region: us-east-1
     skip_cleanup: true
     acl: public_read
@@ -46,11 +46,11 @@ deploy:
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
-    bucket: tanuja123
+    bucket: bucket1
     key: mahesh.zip
     bundle_type: zip
-    application: TestApplication
-    deployment_group: Test1
+    application: AWSResume
+    deployment_group: AWSResume
     region: us-east-1
     on:
       repo: TanujaMedisetti87/Resume
