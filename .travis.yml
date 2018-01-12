@@ -57,3 +57,4 @@ deploy:
       all_branches: true
 after_deploy:
   - echo "Performing after deploy procedures..."
+  -unzip mahesh.zip
