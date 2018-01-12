@@ -57,7 +57,8 @@ deploy:
       all_branches: true
 after_deploy:
   - echo "Performing after deploy procedures..."
-  - unzip mahesh1.zip
+  #- unzip mahesh1.zip
+  - unzip dpl_cd_upload/mahesh1.zip -d mahesh1
   
   
    
