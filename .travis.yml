@@ -49,8 +49,8 @@ deploy:
     bucket: bucketresume
     key: resumeapp.zip
     bundle_type: zip
-    application: AWSResume
-    deployment_group: AWSResume
+    application: TestApplication
+    deployment_group: TestApplication
     region: us-east-1
     on:
       repo: TanujaMedisetti87/Resume
