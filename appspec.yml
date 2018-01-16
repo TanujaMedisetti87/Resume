@@ -1,14 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: /resume/views/index.html
+  - source: resume/views/index.html
     destination: /var/www/html
-    
+
 hooks:
   BeforeInstall:
     - location: npm-install.sh
       runas: root
-      timeout: 300
   AfterInstall:
     - location: npm-start.sh
       runas: root
