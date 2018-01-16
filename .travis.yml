@@ -53,7 +53,7 @@ before_script:
   - npm install
 script:
   - sonar-scanner
-  - zip -r logan10*
+  - zip -r logan10 *
   - mkdir -p dpl_cd_upload
   - mv logan10.zip dpl_cd_upload/logan10.zip
   
