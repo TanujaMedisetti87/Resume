@@ -20,34 +20,25 @@ addons:
   sauce_connect:
     username: "TanujaMedisetti87"
     access_key: "130dda79-1dea-45cd-849c-24cfbe048884"
-    
-script:
-  - sonar-scanner
-  
-before_deploy:
-  - cd ..
-  - zip -r mahesh1 *
-  - mkdir -p "dpl_cd_upload"
-  - mv mahesh1.zip dpl_cd_upload/mahesh1.zip
 
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
     local_dir: dpl_cd_upload
-    bucket: tanuja123
+    bucket: resumebucket
     region: us-east-1
     skip_cleanup: true
     acl: public_read
     detect_encoding: true
     on:
-      repo:  TanujaMedisetti87/Resume
+      repo: TanujaMedisetti87/Resume
       all_branches: true
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
-    bucket: tanuja123
-    key: mahesh1.zip
+    bucket: resumebucket
+    key: logan10.zip
     bundle_type: zip
     application: TestApplication
     deployment_group: TestApplication
@@ -56,13 +47,15 @@ deploy:
       repo: TanujaMedisetti87/Resume
       all_branches: true
 after_deploy:
-  - echo "Performing after deploy procedures..."
-  - unzip mahesh1.zip
-  
-  
-  
-  #- unzip dpl_cd_upload/mahesh1.zip -d dpl_cd_upload/mahesh1
-  
+  - echo "Performing after deploy procedures..."  
+
+before_script:
+  - npm install
+script:
+  - sonar-scanner
+  - zip -r logan10*
+  - mkdir -p dpl_cd_upload
+  - mv logan10.zip dpl_cd_upload/logan10.zip
   
   
   
